@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ThirdQuestionView: View {
     var body: some View {
-        NavigationView{
             VStack{
                 Text("はっきりもの言ってくれる教授はありがたいですか？")
                 NavigationLink(destination:NakagawaKen()){
@@ -20,8 +19,6 @@ struct ThirdQuestionView: View {
                 }
                 
             }
-            
-        }
         .navigationBarBackButtonHidden(true)
     }
 }
