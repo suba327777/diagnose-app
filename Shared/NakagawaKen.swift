@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct NakagawaKen: View {
+    @EnvironmentObject var envData: EnvironmentData
+    
     var body: some View {
-        Text("中川研をおすすめします！！")
+        VStack{
+            Text("中川研をおすすめします！！")
+            Button("homeに戻る"){
+                envData.isNavigationActive.wrappedValue=false
+            }
             .navigationBarBackButtonHidden(true)
+        }
     }
 }
 

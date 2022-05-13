@@ -7,27 +7,26 @@
 
 import SwiftUI
 
-struct SecondQuestionView: View {
+struct QuestionView: View {
     var body: some View {
-        
                 VStack{
                         Text("好きな分野は宇宙ですか?")
                         NavigationLink(destination:NakagawaKen()){
-                            Text("Yes")
+                           Text("yes")
                         }
-                    
-                        NavigationLink(destination:ThirdQuestionView()){
+                        NavigationLink(destination:MiuraKen()){
                             Text("No")
                         }
                     }
-        
             .navigationBarBackButtonHidden(true)
         }
 }
 
-struct SecondView_Previews: PreviewProvider {
+struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondQuestionView()
+        QuestionView()
     }
 }
+
+
 
