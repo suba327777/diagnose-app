@@ -15,6 +15,7 @@ struct diagnose_appApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(EnvironmentData())
         }
     }
 }
