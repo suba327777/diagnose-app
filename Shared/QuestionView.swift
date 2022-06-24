@@ -16,7 +16,7 @@ struct QuestionView: View {
                     HStack{
                         Button{
                             question.scoreCalc(trigger:true)
-                            if(question.cnt==20){
+                            if(question.cnt==question.numQuestion){
                                 self.showResultView = true
                             }
                             
@@ -25,7 +25,7 @@ struct QuestionView: View {
                         }
                         Button{
                             question.scoreCalc(trigger:false)
-                            if(question.cnt==20){
+                            if(question.cnt==question.numQuestion){
                                 self.showResultView = true
                             }
                         }label: {
