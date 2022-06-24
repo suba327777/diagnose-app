@@ -11,13 +11,11 @@ class QuestonController:ObservableObject{
     @Published var numQuestion:Int=20
     @Published var csvArray=[String]()
     @Published var questionList = [[String]]()
-    
     //乱数配列
-    var random = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] //研究室+1
+    private var random = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // 質問数
     var cnt:Int=1
     /*得点を格納する１次元配列の初期化 研究室数+1*/
-    var answerScore = [Int](repeating: 0, count: 20)
-    
+    var answerScore = [Int](repeating: 0, count: 18)
     
     init(){
         // ファイルが存在するか
@@ -62,81 +60,67 @@ class QuestonController:ObservableObject{
         random[12] = Int(arc4random_uniform(60 - 56)+56)//56~60の範囲
         random[13] = Int(arc4random_uniform(65 - 61)+61)//61~65の範囲
         random[14] = Int(arc4random_uniform(70 - 66)+66)//66~70の範囲
-        random[15] = Int(arc4random_uniform(75 - 71)+71)//75~の範囲
-        random[16] = Int(arc4random_uniform(80 - 76)+76)//46~50の範囲
-        random[17] = Int(arc4random_uniform(85 - 81)+81)//51~55の範囲
-        random[18] = Int(arc4random_uniform(90 - 86)+86)//56~60の範囲
-        random[19] = Int(arc4random_uniform(95 - 91)+91)//61~65の範囲
-        random[20] = Int(arc4random_uniform(100 - 96)+96)//66~70の範囲
+        random[15] = Int(arc4random_uniform(75 - 71)+71)//71~75の範囲
+        random[16] = Int(arc4random_uniform(80 - 76)+76)//76~80の範囲
+        random[17] = Int(arc4random_uniform(85 - 81)+81)//81~85の範囲
+        random[18] = Int(arc4random_uniform(90 - 86)+86)//86~90の範囲
+        random[19] = Int(arc4random_uniform(95 - 91)+91)//91~95の範囲
+        random[20] = Int(arc4random_uniform(100 - 96)+96)//96~100の範囲
         print("質問 = " ,random)
         
     }
     
-    func questionGeneration(){
+    private func questionGeneration(){
         questiontext=questionList[random[cnt]][0]
-        print(questiontext)
     }
     
-    func scoreCalc(trigger:Bool){
-        print(answerScore)
-        print(cnt)
-        print(trigger)
-        if(cnt<=numQuestion){
-            //研究室ごとにポイント加算
-            if(trigger){
-                for i in 1...17{
-    //                キャスト
-                    answerScore[i]+=Int(questionList[random[cnt-0]][i])!
-                }
+    public func scoreCalc(trigger:Bool){
+        //研究室ごとにポイント加算
+        if(trigger){
+            for i in 1...17{
+                answerScore[i]+=Int(questionList[random[cnt-0]][i])!
             }
-            cnt+=1;
+        }
+        cnt+=1;
+        print(answerScore)
+        if(cnt<=numQuestion){
             questionGeneration()
         }
     }
 }
 struct QuestionView: View {
     @ObservedObject var question=QuestonController()
-
+    @State private var showResultView: Bool = false
     var body: some View {
                 VStack{
                     Text(question.questiontext)
                     
                     HStack{
                         Button{
-                            if(question.cnt<=question.numQuestion){
-                                question.scoreCalc(trigger:true)
-                            }else{
-                                print("a")
+                            question.scoreCalc(trigger:true)
+                            if(question.cnt==20){
+                                self.showResultView = true
                             }
+                            
                         }label: {
                             Text("Yes")
                         }
                         Button{
-                            if(question.cnt<=question.numQuestion){
-                                question.scoreCalc(trigger:false)
-                            }else{
-                                print("end")
+                            question.scoreCalc(trigger:false)
+                            if(question.cnt==20){
+                                self.showResultView = true
                             }
                         }label: {
                             Text("No")
                         }
                     }
-//                        NavigationLink(destination:NakagawaKen()){
-//                           Text("yes")
-//                            //1
-////                            cnt=cnt+1
-//
-//                        }
-//                        NavigationLink(destination:MiuraKen()){
-//                            Text("No")
-////                            0
-////                            cnt++
-//                        }
+                    .sheet(isPresented: $showResultView){
+                        ResultView()
                     }
+                }
             .navigationBarBackButtonHidden(true)
         }
 }
-
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
