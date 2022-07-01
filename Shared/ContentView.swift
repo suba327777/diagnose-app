@@ -40,9 +40,11 @@ struct ContentView: View {
                         .cornerRadius(15,antialiased: true)
                         .padding(.bottom,10)
                 }
+                
             }
             .navigationBarBackButtonHidden(true)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
