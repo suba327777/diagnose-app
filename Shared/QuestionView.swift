@@ -14,11 +14,12 @@ struct QuestionView: View {
                     Text(question.questiontext)
                         
                         .fontWeight(.black)
-                        padding(150)
+                        
                     
                         
                     
                     HStack{
+                        Spacer()
                         Button{
                             question.scoreCalc(trigger:true)
                             if(question.cnt==question.numQuestion){
@@ -27,7 +28,22 @@ struct QuestionView: View {
                             
                         }label: {
                             Text("Yes")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                                
                         }
+                        //.padding(.leading,30)
+                        //.padding(.trailing,30)
+                        .padding(35)
+                        .background(.pink)
+                        .border(Color.green, width: 2)
+                        .cornerRadius(20)
+                        
+                        
+                        
+                        
+                        Spacer()
+                        
                         Button{
                             question.scoreCalc(trigger:false)
                             if(question.cnt==question.numQuestion){
@@ -36,7 +52,14 @@ struct QuestionView: View {
                         }label: {
                             Text("No")
                         }
+                        .padding(35)
+                        .background(.cyan)
+                        .border(Color.green, width: 2)
+                        .cornerRadius(20)
+                        Spacer()
                     }
+                    .padding(.top,100)
+                    
                     .sheet(isPresented: $showResultView){
                         ResultView()
                     }
