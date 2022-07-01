@@ -60,7 +60,7 @@ struct QuestionView: View {
                     }
                     .padding(.top,100)
                     
-                    .sheet(isPresented: $showResultView){
+                    .fullScreenCover(isPresented: $showResultView){
                         ResultView()
                     }
                 }
