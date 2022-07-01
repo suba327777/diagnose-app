@@ -14,8 +14,8 @@ struct QuestionView: View {
                     Text(question.questiontext)
                         
                         .fontWeight(.black)
-                        
-                    
+                        .font(.system(size:40))
+                        .multilineTextAlignment(.center)
                         
                     
                     HStack{
@@ -30,13 +30,15 @@ struct QuestionView: View {
                             Text("Yes")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
+                                .frame(width: 150, height: 150, alignment: .center)
+                                .font(.system(size:30))
                                 
                         }
                         //.padding(.leading,30)
                         //.padding(.trailing,30)
-                        .padding(35)
+                        //.padding(35)
                         .background(.pink)
-                        .border(Color.green, width: 2)
+                        .border(Color.black, width: 2)
                         .cornerRadius(20)
                         
                         
@@ -51,10 +53,15 @@ struct QuestionView: View {
                             }
                         }label: {
                             Text("No")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                                .frame(width: 150, height: 150, alignment: .center)
+                                .font(.system(size:30))
+                                
                         }
-                        .padding(35)
+                        //.padding(35)
                         .background(.cyan)
-                        .border(Color.green, width: 2)
+                        .border(Color.black, width: 2)
                         .cornerRadius(20)
                         Spacer()
                     }
