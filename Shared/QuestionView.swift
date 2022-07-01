@@ -12,6 +12,11 @@ struct QuestionView: View {
     var body: some View {
                 VStack{
                     Text(question.questiontext)
+                        
+                        .fontWeight(.black)
+                        padding(150)
+                    
+                        
                     
                     HStack{
                         Button{
