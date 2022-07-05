@@ -15,14 +15,20 @@ struct ResultView: View {
     
     let indexList:[Int]
     let questionList:[[String]]
+    let allAnswerFlg:Bool
     
     var body: some View {
         VStack{
-            Text("あなたにおすすめの研究室はこちらになります！！")
             
-            ForEach (indexList,id: \.self){ i in
-                Text("\(questionList[0][i])")
-                }
+            if(allAnswerFlg==true){
+                Text("あなたにおすすめの研究室はこちらになります！！")
+                ForEach (indexList,id: \.self){ i in
+                    Text("\(questionList[0][i])")
+                    }
+            }else{
+                Text("全ての質問をNoと答えましたね！！\n脳の研究室です！！！")
+            }
+           
             
             Button("homeに戻る"){
                 dismiss()

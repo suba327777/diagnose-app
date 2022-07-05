@@ -63,7 +63,7 @@ struct QuestionView: View {
                     .padding(.top,100)
                     
                     .fullScreenCover(isPresented: $showResultView){
-                        ResultView(indexList:question.indexList,questionList:question.questionList)
+                        ResultView(indexList:question.indexList,questionList:question.questionList,allAnswerFlg:question.allAnswerFlg)
                     }
                 }
             .navigationBarBackButtonHidden(true)
