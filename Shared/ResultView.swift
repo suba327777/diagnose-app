@@ -14,7 +14,6 @@ struct ResultView: View {
     @State var showQuestionView=false
     
     let indexList:[Int]
-    let questionList:[[String]]
     let allAnswerFlg:Bool
     
     var body: some View {
@@ -23,13 +22,13 @@ struct ResultView: View {
             if(allAnswerFlg==true){
                 Text("あなたにおすすめの研究室はこちらになります！！")
                 ForEach (indexList,id: \.self){ i in
-                    Text("\(questionList[0][i])")
+                    ImageView(image: imageArray[i])
                     }
             }else{
                 Text("全ての質問をNoと答えましたね！！\n脳の研究室です！！！")
             }
            
-            
+        
             Button("homeに戻る"){
                 dismiss()
                 envData.isNavigationActive.wrappedValue=false
