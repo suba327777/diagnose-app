@@ -17,24 +17,24 @@ struct ResultView: View {
     let allAnswerFlg:Bool
     
     var body: some View {
-        VStack{
-            
-            if(allAnswerFlg==true){
-                Text("あなたにおすすめの研究室はこちらになります！！")
-                ForEach (indexList,id: \.self){ i in
-                    ImageView(image: imageArray[i])
-                    }
-            }else{
-                Text("全ての質問をNoと答えましたね！！\n脳の研究室です！！！")
+        ScrollView{
+            VStack{
+                if(allAnswerFlg==true){
+                    Text("あなたにおすすめの研究室はこちらになります！！")
+                    ForEach (indexList,id: \.self){ i in
+                        ImageView(image: imageArray[i])
+                        }
+                }else{
+                    Text("全ての質問をNoと答えましたね！！\n脳の研究室です！！！")
+                }
+                Button("homeに戻る"){
+                    dismiss()
+                    envData.isNavigationActive.wrappedValue=false
+                }
+                .navigationBarBackButtonHidden(true)
             }
-           
-        
-            Button("homeに戻る"){
-                dismiss()
-                envData.isNavigationActive.wrappedValue=false
-            }
-            .navigationBarBackButtonHidden(true)
         }
+
     }
 }
 

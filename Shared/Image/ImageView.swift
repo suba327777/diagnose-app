@@ -13,6 +13,7 @@ struct ImageView: View {
         VStack{
             Image(image.imageName)
             Text(image.title)
+            Text(image.info)
         }
     }
 }

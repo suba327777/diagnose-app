@@ -28,6 +28,7 @@
 		A87703F52809401A00A9118D /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87703F32809401A00A9118D /* QuestionView.swift */; };
 		A886B7F72874250300DB682A /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B7F62874250300DB682A /* ImageModel.swift */; };
 		A886B7FC2874281A00DB682A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B7FB2874281A00DB682A /* ImageView.swift */; };
+		A886B8012874458400DB682A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B8002874458400DB682A /* Util.swift */; };
 		A8A28C04282E4014008D9E6A /* dataList.csv in Resources */ = {isa = PBXBuildFile; fileRef = A8A28C03282E4014008D9E6A /* dataList.csv */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		A87703F32809401A00A9118D /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		A886B7F62874250300DB682A /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		A886B7FB2874281A00DB682A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		A886B8002874458400DB682A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		A8A28C03282E4014008D9E6A /* dataList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataList.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				A88467DD281A34B200DFED35 /* Model */,
 				A88467DF281A355700DFED35 /* View */,
 				A8A28C06282E4117008D9E6A /* Controller */,
+				A886B7FF2874456300DB682A /* Utility */,
 				A87703A82809374000A9118D /* Persistence.swift */,
 				A87703A62809374000A9118D /* diagnose_appApp.swift */,
 				A8A28C03282E4014008D9E6A /* dataList.csv */,
@@ -191,6 +194,14 @@
 				A886B7FB2874281A00DB682A /* ImageView.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		A886B7FF2874456300DB682A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A886B8002874458400DB682A /* Util.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		A8A28C06282E4117008D9E6A /* Controller */ = {
@@ -360,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A886B8012874458400DB682A /* Util.swift in Sources */,
 				A87703CF2809374100A9118D /* diagnose_app.xcdatamodeld in Sources */,
 				A82571952865B3E8009DEB02 /* ResultView.swift in Sources */,
 				A87703F42809401A00A9118D /* QuestionView.swift in Sources */,
