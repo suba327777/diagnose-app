@@ -11,6 +11,11 @@ struct QuestionView: View {
     @State private var showResultView: Bool = false
     var body: some View {
                 VStack{
+                    Text("Q.\(question.cnt)")
+                        .fontWeight(.black)
+                        .font(.system(size:40))
+                        .multilineTextAlignment(.center)
+                    
                     Text(question.questiontext)
                         
                         .fontWeight(.black)

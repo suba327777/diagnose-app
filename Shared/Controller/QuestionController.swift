@@ -13,10 +13,10 @@ class QuestonController:ObservableObject{
     @Published var csvArray=[String]()
     @Published var questionList = [[String]]()
     @Published var allAnswerFlg:Bool=false
+    @Published var cnt:Int=1
     //乱数配列
     private var random = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // 質問数
     
-    var cnt:Int=1
     /*得点を格納する１次元配列の初期化 研究室数+1*/
     var answerScore = [Int](repeating: 0, count: 18)
     var scoreFlg:Bool=false
