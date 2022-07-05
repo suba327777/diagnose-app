@@ -22,30 +22,10 @@ class QuestonController:ObservableObject{
     var scoreFlg:Bool=false
     var indexList=[0,0,0]
     
+//    var key:String="dataList"
+    
     init(){
-        // ファイルが存在するか
-        guard let path=Bundle.main.path(forResource: "dataList", ofType: "csv") else{
-            print("csvファイルはないよ！")
-            return
-        }
-
-        do{
-            let csvString=try String(contentsOfFile:path,encoding: String.Encoding.utf8)
-            csvArray=csvString.components(separatedBy: .newlines)
-            csvArray.removeLast()
-        }catch let error as NSError{
-            print("エラー:\(error)")
-            return
-        }
-
-        for questionData in csvArray {
-            let questionDetail = questionData.components(separatedBy: ",")
-            questionList.append(questionDetail)
-        }
-        
-//        csv 格納
-        self.questionList=questionList
-        
+        questionList=Util.readCSV(key: "dataList")
         createRandom()
         questionGeneration()
     }
@@ -72,7 +52,6 @@ class QuestonController:ObservableObject{
         random[19] = Int(arc4random_uniform(95 - 91)+91)//91~95の範囲
         random[20] = Int(arc4random_uniform(100 - 96)+96)//96~100の範囲
         print("質問 = " ,random)
-        
     }
     
     private func questionGeneration(){
