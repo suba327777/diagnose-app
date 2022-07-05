@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A804D69D286EDB9000519E03 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804D69C286EDB9000519E03 /* ResultController.swift */; };
 		A82571952865B3E8009DEB02 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82571942865B3E8009DEB02 /* ResultView.swift */; };
 		A82571962865B3E8009DEB02 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82571942865B3E8009DEB02 /* ResultView.swift */; };
 		A82571982865BF3C009DEB02 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82571972865BF3C009DEB02 /* QuestionController.swift */; };
@@ -48,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A804D69C286EDB9000519E03 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		A82571942865B3E8009DEB02 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		A82571972865BF3C009DEB02 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		A87703A52809374000A9118D /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				A82571972865BF3C009DEB02 /* QuestionController.swift */,
-				A804D69C286EDB9000519E03 /* ResultController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				A82571952865B3E8009DEB02 /* ResultView.swift in Sources */,
 				A87703F42809401A00A9118D /* QuestionView.swift in Sources */,
 				A87703D52809374100A9118D /* Persistence.swift in Sources */,
-				A804D69D286EDB9000519E03 /* ResultController.swift in Sources */,
 				A87703D12809374100A9118D /* diagnose_appApp.swift in Sources */,
 				A87703D32809374100A9118D /* ContentView.swift in Sources */,
 				A82571982865BF3C009DEB02 /* QuestionController.swift in Sources */,
