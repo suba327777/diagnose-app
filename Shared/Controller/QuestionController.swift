@@ -12,11 +12,15 @@ class QuestonController:ObservableObject{
     @Published var numQuestion:Int=20
     @Published var csvArray=[String]()
     @Published var questionList = [[String]]()
+    @Published var allAnswerFlg:Bool=false
     //乱数配列
     private var random = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // 質問数
+    
     var cnt:Int=1
     /*得点を格納する１次元配列の初期化 研究室数+1*/
     var answerScore = [Int](repeating: 0, count: 18)
+    var scoreFlg:Bool=false
+    var indexList=[0,0,0]
     
     init(){
         // ファイルが存在するか
@@ -86,6 +90,29 @@ class QuestonController:ObservableObject{
         print(answerScore)
         if(cnt<=numQuestion){
             questionGeneration()
+        }
+    }
+    
+    public func decideRank(){
+        for i in 1...17{
+            if(answerScore[i] != 0){
+                scoreFlg=true
+            }
+        }
+        if(scoreFlg == true){
+            allAnswerFlg=true
+            for i in 1...indexList.count{
+                if let firstIndex=answerScore.firstIndex(of: answerScore.max()!){
+                    answerScore[firstIndex] = -1*answerScore[firstIndex]
+                    indexList[i-1] = firstIndex
+                    print("\(i)位 \(questionList[0][firstIndex]) \(answerScore)")
+                    print(indexList)
+                }
+            }
+        }else{
+            //質問回答が全ていいえの場合、
+            allAnswerFlg=false
+            
         }
     }
 }

@@ -23,6 +23,7 @@ struct QuestionView: View {
                         Button{
                             question.scoreCalc(trigger:true)
                             if(question.cnt==question.numQuestion){
+                                question.decideRank()
                                 self.showResultView = true
                             }
                             
@@ -47,6 +48,7 @@ struct QuestionView: View {
                         Button{
                             question.scoreCalc(trigger:false)
                             if(question.cnt==question.numQuestion){
+                                question.decideRank()
                                 self.showResultView = true
                             }
                         }label: {
@@ -60,8 +62,8 @@ struct QuestionView: View {
                     }
                     .padding(.top,100)
                     
-                    .sheet(isPresented: $showResultView){
-                        ResultView()
+                    .fullScreenCover(isPresented: $showResultView){
+                        ResultView(indexList:question.indexList,questionList:question.questionList,allAnswerFlg:question.allAnswerFlg)
                     }
                 }
             .navigationBarBackButtonHidden(true)
