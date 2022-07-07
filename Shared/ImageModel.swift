@@ -16,7 +16,7 @@ struct ImageModel:Identifiable{
 }
 
 var imageArray=[
-    ImageModel(imageName: "三浦大先生", title: "",subTitle:"",url: "https://researchmap.jp/nmiura"),
+    ImageModel(imageName: "三浦大先生", title: "三浦研一択です！！！",subTitle:"",url: "https://researchmap.jp/nmiura"),
     ImageModel(imageName: "工藤研究室", title: "工藤研究室",subTitle:"〜超高速次世代移動無線通信ネットワーク〜",url: "https://www.ice.tohtech.ac.jp/labs/kudoh/"),
     ImageModel(imageName: "中川研究室", title: "中川研究室",subTitle:"〜人工衛星や惑星探査機で宇宙科学に挑む〜",url: "https://www.ice.tohtech.ac.jp/labs/nakagawa/"),
     ImageModel(imageName: "野口研究室", title: "野口研究室",subTitle:"〜新しい光通信システムの技術を開発する〜",url: "https://www.ice.tohtech.ac.jp/labs/noguchi/"),
