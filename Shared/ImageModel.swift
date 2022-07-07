@@ -15,7 +15,7 @@ struct ImageModel:Identifiable{
 }
 
 var imageArray=[
-    ImageModel(imageName: "", title: "none",info:"none"),
+    ImageModel(imageName: "三浦大先生", title: "",info:""),
     ImageModel(imageName: "工藤研究室", title: "工藤研究室",info:"超高速通信が可能な携帯電話ネットワークの構築を目指して、遅れて届く電波の干渉や送信電力の増大という課題を克服するために、計算機シミュレーションやハードウェア実験を行っています。" ),
     ImageModel(imageName: "中川研究室", title: "中川研究室",info:"惑星や人工衛星に超音速で吹き付ける太陽風プラズマは、オーロラをはじめとする多彩な電磁現象を宇宙空間にもたらしています。人工衛星や惑星探査機によって得られたデータを解析し、宇宙の謎に挑んでいます。"),
     ImageModel(imageName: "野口研究室", title: "野口研究室",info:"増大する情報伝送量に対応するには、１本の光ファイバで大量の情報を運ぶ必要があります。さまざまな波長の光を１本の光ファイバで同時に運び、その一部だけを取り出したり切り替えたりできる技術を研究しています"),
