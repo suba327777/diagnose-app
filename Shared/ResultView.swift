@@ -19,7 +19,7 @@ struct ResultView: View {
     let allAnswerFlg:Bool
     
     var body: some View {
-        ScrollView{
+        ScrollView(showsIndicators:false ){
             VStack{
                 if(allAnswerFlg==true){
                     if(!self.isCountDown){
