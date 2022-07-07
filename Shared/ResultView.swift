@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ResultView: View {
     
+    @State var count = 2
+    @State var isCountDown = false
+    @State var opacity=0.0
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var envData: EnvironmentData
-    @State var showQuestionView=false
     
     let indexList:[Int]
     let allAnswerFlg:Bool
@@ -20,19 +22,43 @@ struct ResultView: View {
         ScrollView{
             VStack{
                 if(allAnswerFlg==true){
-                    Text("あなたにおすすめの研究室はこちらになります！！")
-                    ForEach (indexList,id: \.self){ i in
-                        ImageView(image: imageArray[i])
-                        }
+                    if(!self.isCountDown){
+                        Text("あなたにおすすめの研究室は...")
+                            .font(.system(size: 30, weight: .black, design: .default))
+                            .offset(x:0,y:500)
+                    }
+                    if(self.isCountDown){
+                        ForEach (indexList,id: \.self){ i in
+                            ImageView(image: imageArray[i])
+                                .transition(.opacity)
+                            }
+                    }
                 }else{
-                    Text("全ての質問をNoと答えたあなたは！！\n三浦研究室です！！！")
-                    ImageView(image:imageArray[0])
+                    if(!self.isCountDown){
+                        Text("全ての質問をNoと答えたあなたは！！\n三浦研究室です！！！")
+                            .transition(.opacity)
+                        ImageView(image:imageArray[0])
+                            .transition(.opacity)
+                    }
                 }
-                Button("homeに戻る"){
-                    dismiss()
-                    envData.isNavigationActive.wrappedValue=false
+                if(self.isCountDown){
+                    Button("homeに戻る"){
+                        dismiss()
+                        envData.isNavigationActive.wrappedValue=false
+                    }
+                    .navigationBarBackButtonHidden(true)
                 }
-                .navigationBarBackButtonHidden(true)
+            }
+        }
+        .onAppear(){
+            //1.0sおきに実行される
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){timer in
+                self.count-=1
+                if(self.count==0){
+                    timer.invalidate()
+                    self.isCountDown=true
+                }
+                
             }
         }
 
