@@ -25,7 +25,8 @@ struct ResultView: View {
                         ImageView(image: imageArray[i])
                         }
                 }else{
-                    Text("全ての質問をNoと答えましたね！！\n脳の研究室です！！！")
+                    Text("全ての質問をNoと答えたあなたは！！\n三浦研究室です！！！")
+                    ImageView(image:imageArray[0])
                 }
                 Button("homeに戻る"){
                     dismiss()
