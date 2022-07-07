@@ -11,7 +11,7 @@ struct ResultView: View {
     
     @State var count = 2
     @State var isCountDown = false
-    @State var opacity=0.0
+//    @State var opacity=0.0
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var envData: EnvironmentData
     
@@ -26,28 +26,31 @@ struct ResultView: View {
                         Text("あなたにおすすめの研究室は...")
                             .font(.system(size: 30, weight: .black, design: .default))
                             .offset(x:0,y:500)
-                    }
-                    if(self.isCountDown){
+                    }else{
                         ForEach (indexList,id: \.self){ i in
                             ImageView(image: imageArray[i])
                                 .transition(.opacity)
                             }
                     }
+                
                 }else{
                     if(!self.isCountDown){
-                        Text("全ての質問をNoと答えたあなたは！！\n三浦研究室です！！！")
-                            .transition(.opacity)
+                        Text("全ての質問をNoと答えたあなたは...")
+                            .font(.system(size: 30, weight: .black, design: .default))
+                            .offset(x:0,y:500)
+                        
+                    }else{
                         ImageView(image:imageArray[0])
-                            .transition(.opacity)
+                            .padding(.top,300)
                     }
                 }
-                if(self.isCountDown){
-                    Button("homeに戻る"){
-                        dismiss()
-                        envData.isNavigationActive.wrappedValue=false
-                    }
-                    .navigationBarBackButtonHidden(true)
+            }
+            if(self.isCountDown){
+                Button("homeに戻る"){
+                    dismiss()
+                    envData.isNavigationActive.wrappedValue=false
                 }
+                .navigationBarBackButtonHidden(true)
             }
         }
         .onAppear(){
@@ -58,7 +61,6 @@ struct ResultView: View {
                     timer.invalidate()
                     self.isCountDown=true
                 }
-                
             }
         }
 
