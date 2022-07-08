@@ -50,7 +50,16 @@ struct ResultView: View {
                     dismiss()
                     envData.isNavigationActive.wrappedValue=false
                 }
+                .font(.subheadline)
+                .frame(width:580,height:50,alignment: .center)
+                .foregroundColor(Color.white)
+                .padding(.bottom,10)
+                .background(.blue)
+                .border(Color.black,width:2)
+                .cornerRadius(30,antialiased: true)
+                .font(.system(size:40))
                 .navigationBarBackButtonHidden(true)
+                
             }
         }
         .onAppear(){
