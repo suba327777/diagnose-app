@@ -11,7 +11,6 @@ struct ResultView: View {
     
     @State var count = 2
     @State var isCountDown = false
-//    @State var opacity=0.0
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var envData: EnvironmentData
     
@@ -27,10 +26,11 @@ struct ResultView: View {
                             .font(.system(size: 30, weight: .black, design: .default))
                             .offset(x:0,y:500)
                     }else{
-                        ForEach (indexList,id: \.self){ i in
+                        ForEach (Array(indexList.enumerated()),id: \.offset){ offset,i in
                             ImageView(image: imageArray[i])
-                                .transition(.opacity)
+                            Text("\(offset+1)")
                             }
+                       
                     }
                 
                 }else{
