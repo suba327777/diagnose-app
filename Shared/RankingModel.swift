@@ -18,5 +18,5 @@ var rankingArray=[
     RankingModel(imageName: "1"),
     RankingModel(imageName: "2"),
     RankingModel(imageName: "3"),
-    RankingModel(imageName: ""),
+    RankingModel(imageName: "4"),
 ]
