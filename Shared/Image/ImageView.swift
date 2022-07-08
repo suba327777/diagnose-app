@@ -16,22 +16,20 @@ struct ImageView: View {
             HStack{
                 Image(ranking.imageName)
                     .resizable()
-                    .frame(width: 25, height: 25,alignment:.center)
-                    .padding(.leading,10)
+                    .frame(width: 30, height: 25,alignment:.center)
                 Text(image.title)
             }
             Image(image.imageName)
                 .resizable()
                 .frame(width: 400, height: 250,alignment:.center)
                 .cornerRadius(10)
-            
+                .onTapGesture {
+                    guard let laboratoryURL = URL(string: image.url)
+                     else { fatalError("Expected a valid URL") }
+                    UIApplication.shared.open(laboratoryURL)
+                }
             Text(image.subTitle)
             .padding()
-        }
-        .onTapGesture {
-            guard let laboratoryURL = URL(string: image.url)
-             else { fatalError("Expected a valid URL") }
-            UIApplication.shared.open(laboratoryURL)
         }
     }
 }
@@ -41,7 +39,7 @@ struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
         ImageView(image:imageArray[1],ranking: rankingArray[0])
             .previewLayout(.sizeThatFits)
-            .previewInterfaceOrientation(.landscapeLeft)
+            .previewInterfaceOrientation(.portrait)
         
     }
 }
