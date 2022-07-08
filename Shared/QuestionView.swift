@@ -75,9 +75,20 @@ struct QuestionView: View {
                     .fullScreenCover(isPresented: $showResultView){
                         ResultView(indexList:question.indexList,allAnswerFlg:question.allAnswerFlg)
                     }
-                    ProgressView("診断中...",value:Double(question.cnt),total: Double(question.numQuestion))
-                        .padding(.top,100)
-                        .padding(.horizontal,100)
+                    VStack(alignment: .leading) {
+                                Text("診断中...")
+                                .foregroundColor(Color.blue)
+                                .font(.system(size:20))
+                                .padding()
+                                ProgressView(value:Double(question.cnt), total: Double(question.numQuestion))
+                                .accentColor(Color.blue)
+                                
+                                .scaleEffect(x:1, y: 10, anchor: .center)
+                                
+                            }
+                    .padding([.top, .leading, .trailing], 100.0)
+
+                        
                 }
             .navigationBarBackButtonHidden(true)
         }
