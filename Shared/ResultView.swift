@@ -27,10 +27,8 @@ struct ResultView: View {
                             .offset(x:0,y:500)
                     }else{
                         ForEach (Array(indexList.enumerated()),id: \.offset){ offset,i in
-                            ImageView(image: imageArray[i])
-                            Text("\(offset+1)")
-                            }
-                       
+                            ImageView(image: imageArray[i],ranking: rankingArray[offset])
+                        }
                     }
                 
                 }else{
@@ -40,7 +38,7 @@ struct ResultView: View {
                             .offset(x:0,y:500)
                         
                     }else{
-                        ImageView(image:imageArray[0])
+                        ImageView(image:imageArray[0],ranking: rankingArray[3])
                             .padding(.top,300)
                     }
                 }
