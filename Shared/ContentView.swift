@@ -61,28 +61,10 @@ struct ContentView: View {
                                             .background(Color.white)
                                             .cornerRadius(50,antialiased: true)
                                             .padding(.bottom,10)
-                                            .offset(y: 200)
                                     }
+                                    .offset(y:200)
                             }
-                        )
-                    
-//                NavigationLink(destination:QuestionView(),isActive: $isActive){
-//                       EmptyView()
-//                    }
-//
-//                    Button(action:{
-//                        isActive=true
-//                        envData.isNavigationActive=$isActive
-//                    }){
-//                        Text("START")
-//                            .font(.largeTitle)
-//                            .frame(width:680,height:100,alignment: .center)
-//                            .foregroundColor(Color.red)
-//                            .background(Color.green)
-//                            .cornerRadius(15,antialiased: true)
-//                            .padding(.bottom,10)
-//                    }
-                    
+                        )                    
                 }
                 .navigationBarBackButtonHidden(true)
             }

@@ -10,28 +10,26 @@ import SwiftUI
 struct ImageView: View {
     
     var image:ImageModel
-    
+    var ranking:RankingModel
     var body: some View {
         VStack{
-//            順位を表示しその順位に応じた王冠を表示する
-
-            Text(image.title)
-//                .font(.custom("Times-Roman", size: 30))
-
+            HStack{
+                Image(ranking.imageName)
+                    .resizable()
+                    .frame(width: 30, height: 25,alignment:.center)
+                Text(image.title)
+            }
             Image(image.imageName)
                 .resizable()
                 .frame(width: 400, height: 250,alignment:.center)
                 .cornerRadius(10)
-            
+                .onTapGesture {
+                    guard let laboratoryURL = URL(string: image.url)
+                     else { fatalError("Expected a valid URL") }
+                    UIApplication.shared.open(laboratoryURL)
+                }
             Text(image.subTitle)
-//                        .font(.custom("Times-Roman", size: 17))
             .padding()
-//            .border(Color.black,width: 1)
-        }
-        .onTapGesture {
-            guard let laboratoryURL = URL(string: image.url)
-             else { fatalError("Expected a valid URL") }
-            UIApplication.shared.open(laboratoryURL)
         }
     }
 }
@@ -39,8 +37,9 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(image:imageArray[1])
+        ImageView(image:imageArray[1],ranking: rankingArray[0])
             .previewLayout(.sizeThatFits)
-            .previewInterfaceOrientation(.landscapeLeft)
+            .previewInterfaceOrientation(.portrait)
+        
     }
 }

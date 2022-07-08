@@ -26,6 +26,7 @@
 		A87703D82809374100A9118D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87703A92809374000A9118D /* Assets.xcassets */; };
 		A87703F42809401A00A9118D /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87703F32809401A00A9118D /* QuestionView.swift */; };
 		A87703F52809401A00A9118D /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87703F32809401A00A9118D /* QuestionView.swift */; };
+		A8841F4128782661008BA8F6 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8841F4028782661008BA8F6 /* RankingModel.swift */; };
 		A886B7F72874250300DB682A /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B7F62874250300DB682A /* ImageModel.swift */; };
 		A886B7FC2874281A00DB682A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B7FB2874281A00DB682A /* ImageView.swift */; };
 		A886B8012874458400DB682A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B8002874458400DB682A /* Util.swift */; };
@@ -67,6 +68,7 @@
 		A87703CB2809374100A9118D /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A87703CD2809374100A9118D /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		A87703F32809401A00A9118D /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		A8841F4028782661008BA8F6 /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
 		A886B7F62874250300DB682A /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		A886B7FB2874281A00DB682A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		A886B8002874458400DB682A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A886B7F62874250300DB682A /* ImageModel.swift */,
+				A8841F4028782661008BA8F6 /* RankingModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				A87703D12809374100A9118D /* diagnose_appApp.swift in Sources */,
 				A87703D32809374100A9118D /* ContentView.swift in Sources */,
 				A886B7FC2874281A00DB682A /* ImageView.swift in Sources */,
+				A8841F4128782661008BA8F6 /* RankingModel.swift in Sources */,
 				A82571982865BF3C009DEB02 /* QuestionController.swift in Sources */,
 				A886B7F72874250300DB682A /* ImageModel.swift in Sources */,
 			);
