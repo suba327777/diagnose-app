@@ -44,20 +44,23 @@ struct ResultView: View {
                 }
             }
             if(self.isCountDown){
-                Button("homeに戻る"){
+                Button(action:{
                     dismiss()
                     envData.isNavigationActive.wrappedValue=false
+                }){
+                    Text("homeに戻る")
+                        .font(.subheadline)
+                        .frame(width:580,height:50,alignment: .center)
+                        .foregroundColor(Color.white)
+                        .padding(.bottom,10)
+                        .background(.blue)
+                        .border(Color.black,width:2)
+                        .cornerRadius(30,antialiased: true)
+                        .font(.system(size:40))
+                        .navigationBarBackButtonHidden(true)
+                        .padding(.bottom,50)
                 }
-                .font(.subheadline)
-                .frame(width:580,height:50,alignment: .center)
-                .foregroundColor(Color.white)
-                .padding(.bottom,10)
-                .background(.blue)
-                .border(Color.black,width:2)
-                .cornerRadius(30,antialiased: true)
-                .font(.system(size:40))
-                .navigationBarBackButtonHidden(true)
-                
+
             }
         }
         .onAppear(){
