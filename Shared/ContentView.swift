@@ -18,33 +18,76 @@ struct ContentView: View {
     @EnvironmentObject var envData: EnvironmentData
 
     var body :some View{
-        NavigationView{
-            VStack{
-                
-                Text("研究室診断アプリ")
-                    .padding(.bottom, 210.0)
-                    .font(.largeTitle)
-                
-            NavigationLink(destination:QuestionView(),isActive: $isActive){
-                   EmptyView()
+        HStack {
+            
+            NavigationView{
+                VStack{
+                    Image("hacker-g2f505fda9_640")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 1100, height: 1300)
+                        .offset(y:50)
+                        .clipped()
+                        .overlay(
+                            VStack{
+                            Text("研究室診断アプリ")
+                    //.padding(.bottom, 210.0)
+                                .font(.system(size:80))
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                                //.background(.white)
+                                .offset(y: -300)
+                            
+                            Text("〜20問でわかるおすすめの研究室〜")
+                                .font(.system(size:40))
+                                .font(.largeTitle)
+                                .fontWeight(.medium)
+                                .foregroundColor(Color.white)
+                                .offset(y: -300)
+                                
+                                NavigationLink(destination:QuestionView(),isActive: $isActive){
+                                       EmptyView()
+                                    }
+                                    
+                                    Button(action:{
+                                        isActive=true
+                                        envData.isNavigationActive=$isActive
+                                    }){
+                                        Text("START")
+                                            .font(.largeTitle)
+                                            .frame(width:680,height:100,alignment: .center)
+                                            .foregroundColor(Color.blue)
+                                            .background(Color.white)
+                                            .cornerRadius(50,antialiased: true)
+                                            .padding(.bottom,10)
+                                            .offset(y: 200)
+                                    }
+                            }
+                        )
+                    
+//                NavigationLink(destination:QuestionView(),isActive: $isActive){
+//                       EmptyView()
+//                    }
+//
+//                    Button(action:{
+//                        isActive=true
+//                        envData.isNavigationActive=$isActive
+//                    }){
+//                        Text("START")
+//                            .font(.largeTitle)
+//                            .frame(width:680,height:100,alignment: .center)
+//                            .foregroundColor(Color.red)
+//                            .background(Color.green)
+//                            .cornerRadius(15,antialiased: true)
+//                            .padding(.bottom,10)
+//                    }
+                    
                 }
-                Button(action:{
-                    isActive=true
-                    envData.isNavigationActive=$isActive
-                }){
-                    Text("START")
-                        .font(.largeTitle)
-                        .frame(width:280,height:60,alignment: .center)
-                        .foregroundColor(Color.red)
-                        .background(Color.green)
-                        .cornerRadius(15,antialiased: true)
-                        .padding(.bottom,10)
-                }
-                
+                .navigationBarBackButtonHidden(true)
             }
-            .navigationBarBackButtonHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
