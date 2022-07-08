@@ -61,8 +61,9 @@ struct ContentView: View {
                                             .background(Color.white)
                                             .cornerRadius(50,antialiased: true)
                                             .padding(.bottom,10)
+                                            
                                     }
-                                    .offset(y:200)
+                                    .offset(y: 200)
                             }
                         )                    
                 }
