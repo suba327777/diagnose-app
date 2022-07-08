@@ -9,6 +9,8 @@ import SwiftUI
 struct QuestionView: View {
     @ObservedObject var question=QuestonController()
     @State private var showResultView: Bool = false
+    @State private var progress: Double = 0.0
+    
     var body: some View {
                 VStack{
                     Text("Q.\(question.cnt)")
@@ -22,7 +24,6 @@ struct QuestionView: View {
                         .font(.system(size:40))
                         .multilineTextAlignment(.center)
                         
-                    
                     HStack{
                         Spacer()
                         Button{
@@ -46,9 +47,6 @@ struct QuestionView: View {
                         .background(.pink)
                         .border(Color.black, width: 2)
                         .cornerRadius(20)
-                        
-                        
-                        
                         
                         Spacer()
                         
@@ -77,6 +75,9 @@ struct QuestionView: View {
                     .fullScreenCover(isPresented: $showResultView){
                         ResultView(indexList:question.indexList,allAnswerFlg:question.allAnswerFlg)
                     }
+                    ProgressView("診断中...",value:Double(question.cnt),total: Double(question.numQuestion))
+                        .padding(.top,100)
+                        .padding(.horizontal,100)
                 }
             .navigationBarBackButtonHidden(true)
         }
