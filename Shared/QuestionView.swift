@@ -74,7 +74,7 @@ struct QuestionView: View {
                                 Text("診断中...")
                                 .foregroundColor(Color.blue)
                                 .font(.system(size:20))
-                                .padding()
+                                .padding(.bottom,15)
                         
                         ProgressView(value:Double(ViewModel.cnt), total: Double(ViewModel.total))
                                 .accentColor(Color.blue)
