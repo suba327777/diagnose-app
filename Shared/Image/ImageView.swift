@@ -9,41 +9,44 @@ import SwiftUI
 
 struct ImageView: View {
     
-    var image:ImageModel
-    var ranking:RankingModel
+    var labo:LaboPhotos
+    var ranking:RankingPhotos
+    
     var body: some View {
         VStack{
             HStack{
                 Image(ranking.imageName)
                     .resizable()
                     .frame(width: 30, height: 25,alignment:.center)
-                Text(image.title)
+                    
+                Text(labo.title)
                     .font(.title)
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
-                    .padding(.top, 50.0)
-                    
                     
             }
-            Image(image.imageName)
+            Image(labo.imageName)
                 .resizable()
                 .frame(width: 400, height: 250,alignment:.center)
                 .cornerRadius(10)
                 .onTapGesture {
-                    guard let laboratoryURL = URL(string: image.url)
+                    guard let laboratoryURL = URL(string: labo.url)
                      else { fatalError("Expected a valid URL") }
                     UIApplication.shared.open(laboratoryURL)
                 }
-            Text(image.subTitle)
-            .padding()
+    
+            Text(labo.subTitle)
+                .font(.body)
+                .padding()
         }
+        .padding()
     }
 }
 
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(image:imageArray[1],ranking: rankingArray[0])
+        ImageView(labo:laboArray[1],ranking: rankingArray[0])
             .previewLayout(.sizeThatFits)
             .previewInterfaceOrientation(.portrait)
         
