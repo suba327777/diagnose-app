@@ -18,6 +18,12 @@ struct ImageView: View {
                     .resizable()
                     .frame(width: 30, height: 25,alignment:.center)
                 Text(image.title)
+                    .font(.title)
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 50.0)
+                    
+                    
             }
             Image(image.imageName)
                 .resizable()
