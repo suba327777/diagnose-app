@@ -44,6 +44,12 @@ struct ResultView: View {
                 }
             }
             if(self.isCountDown){
+                Text("👆気になる研究室の写真を押してみてね👆")
+                    .font(.system(size:30))
+                    .fontWeight(.thin)
+                    .foregroundColor(Color.orange)
+                    .padding()
+                
                 Button(action:{
                     dismiss()
                     envData.isNavigationActive.wrappedValue=false
