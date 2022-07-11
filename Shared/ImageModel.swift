@@ -29,10 +29,10 @@ var imageArray=[
     ImageModel(imageName: "角田研究室", title: "角田研究室",subTitle:"〜誰もが安心して使えるネットワークを〜",url: "https://www.ice.tohtech.ac.jp/labs/tsunoda/"),
     ImageModel(imageName: "松田研究室", title: "松田研究室",subTitle:"〜データベースと電子機器をネットワークで結ぶ〜",url: "https://www.ice.tohtech.ac.jp/labs/matsuda/"),
     ImageModel(imageName: "三浦研究室", title: "三浦研究室",subTitle:"〜人間の認知活動を応用したシステムの開発〜",url: "https://www.ice.tohtech.ac.jp/labs/miura/"),
-    ImageModel(imageName: "縄田研究室", title: "縄田研究室",subTitle:"",url: "https://www.ice.tohtech.ac.jp/labs/nawata/"),
-    ImageModel(imageName: "北研究室", title: "北研究室",subTitle:"",url: "https://www.ice.tohtech.ac.jp/labs/kita/"),
-    ImageModel(imageName: "八巻研究室", title: "八巻研究室",subTitle:"",url: "https://www.ice.tohtech.ac.jp/labs/yamaki/"),
-    ImageModel(imageName: "グエン研究室", title: "グエン研究室",subTitle:"",url: "https://www.ice.tohtech.ac.jp/labs/nguyen/"),
-    ImageModel(imageName: "袁研究室", title: "袁研究室",subTitle:"",url: "https://www.ice.tohtech.ac.jp/labs/yuan/")
+    ImageModel(imageName: "縄田研究室", title: "縄田研究室",subTitle:"〜テラへルツ光を手を動かしながら体験〜",url: "https://www.ice.tohtech.ac.jp/labs/nawata/"),
+    ImageModel(imageName: "北研究室", title: "北研究室",subTitle:"〜電磁波観測で惑星環境調べる〜",url: "https://www.ice.tohtech.ac.jp/labs/kita/"),
+    ImageModel(imageName: "八巻研究室", title: "八巻研究室",subTitle:"〜高性能なディジタル信号処理を目指して〜",url: "https://www.ice.tohtech.ac.jp/labs/yamaki/"),
+    ImageModel(imageName: "グエン研究室", title: "グエン研究室",subTitle:"〜VRやAIを使ったスマートシステムを開発〜",url: "https://www.ice.tohtech.ac.jp/labs/nguyen/"),
+    ImageModel(imageName: "袁研究室", title: "袁研究室",subTitle:"〜電磁波を軸にシステム設計やモノづくりを〜",url: "https://www.ice.tohtech.ac.jp/labs/yuan/")
 ]
 
