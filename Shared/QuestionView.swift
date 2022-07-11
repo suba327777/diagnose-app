@@ -19,10 +19,11 @@ struct QuestionView: View {
                         .multilineTextAlignment(.center)
                     
                     Text(question.questiontext)
-                        
+                       
                         .fontWeight(.black)
                         .font(.system(size:40))
                         .multilineTextAlignment(.center)
+                        .padding(.top, 10.0)
                         
                     HStack{
                         Spacer()
@@ -91,8 +92,10 @@ struct QuestionView: View {
                         
                 }
             .navigationBarBackButtonHidden(true)
+            
         }
 }
+    
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {

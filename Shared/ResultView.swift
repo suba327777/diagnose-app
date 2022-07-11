@@ -38,11 +38,41 @@ struct ResultView: View {
                             .offset(x:0,y:500)
                         
                     }else{
+                        
+                            HStack{
+                                Spacer()
+                                Image("Image-1")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:200)
+                                Spacer()
+                                Image("Image")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:200)
+                                Spacer()
+                            }
                         ImageView(image:imageArray[0],ranking: rankingArray[3])
-                            .padding(.top,300)
+                        
+                            
+                            HStack{
+                                Spacer()
+                                Image("IMG_8951")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:200)
+                                Spacer()
+                                Image("IMG_8955")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:200)
+                                Spacer()
+                            }
+                        
                     }
                 }
             }
+            
             if(self.isCountDown){
                 Button(action:{
                     dismiss()
@@ -52,16 +82,17 @@ struct ResultView: View {
                         .font(.subheadline)
                         .frame(width:580,height:50,alignment: .center)
                         .foregroundColor(Color.white)
-                        .padding(.bottom,10)
+                        .padding(.vertical,10)
                         .background(.blue)
                         .border(Color.black,width:2)
                         .cornerRadius(30,antialiased: true)
                         .font(.system(size:40))
                         .navigationBarBackButtonHidden(true)
-                        .padding(.bottom,50)
+                        .padding(.vertical,50)
                 }
 
             }
+           
         }
         .onAppear(){
             //1.0sおきに実行される
