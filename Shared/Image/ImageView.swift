@@ -14,6 +14,11 @@ struct ImageView: View {
     
     var body: some View {
         VStack{
+            Image(labo.icon)
+                .resizable()
+                .frame(width: 25, height: 50)
+                .position(x: 185, y: 110)
+            
             HStack{
                 Image(ranking.imageName)
                     .resizable()
@@ -25,6 +30,7 @@ struct ImageView: View {
                     .multilineTextAlignment(.center)
                     
             }
+
             Image(labo.imageName)
                 .resizable()
                 .frame(width: 400, height: 250,alignment:.center)
@@ -46,7 +52,7 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(labo:laboArray[1],ranking: rankingArray[0])
+        ImageView(labo:laboArray[2],ranking: rankingArray[0])
             .previewLayout(.sizeThatFits)
             .previewInterfaceOrientation(.portrait)
         
