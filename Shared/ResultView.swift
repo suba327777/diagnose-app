@@ -15,12 +15,12 @@ struct ResultView: View {
     @EnvironmentObject var envData: EnvironmentData
     
     let indexList:[Int]
-    let allAnswerFlg:Bool
+    let isAnswer:Bool
     
     var body: some View {
         ScrollView(showsIndicators:false ){
             VStack{
-                if(allAnswerFlg==true){
+                if(isAnswer==true){
                     if(!self.isCountDown){
                         Text("あなたにおすすめの研究室は...")
                             .font(.system(size: 30, weight: .black, design: .default))
