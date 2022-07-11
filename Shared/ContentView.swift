@@ -30,24 +30,22 @@ struct ContentView: View {
                         .clipped()
                         .overlay(
                             VStack{
-                            Text("研究室診断アプリ")
-                    //.padding(.bottom, 210.0)
-                                .font(.system(size:80))
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.white)
-                                //.background(.white)
-                                .offset(y: -300)
+                                Text("研究室診断アプリ")
+                                    .font(.system(size:80))
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .offset(y: -300)
                             
-                            Text("〜20問でわかるおすすめの研究室〜")
-                                .font(.system(size:40))
-                                .font(.largeTitle)
-                                .fontWeight(.medium)
-                                .foregroundColor(Color.white)
-                                .offset(y: -300)
+                                Text("〜20問でわかるおすすめの研究室〜")
+                                    .font(.system(size:40))
+                                    .font(.largeTitle)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color.white)
+                                    .offset(y: -300)
                                 
                                 NavigationLink(destination:QuestionView(),isActive: $isActive){
-                                       EmptyView()
+                                        EmptyView()
                                     }
                                     
                                     Button(action:{

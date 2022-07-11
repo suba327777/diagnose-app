@@ -21,54 +21,51 @@ struct ResultView: View {
         ScrollView(showsIndicators:false ){
             VStack{
                 if(isAnswer==true){
-                    if(!self.isCountDown){
+                    if(self.isCountDown){
+                        ForEach (Array(indexList.enumerated()),id: \.offset){ offset,i in
+                            ImageView(labo: laboArray[i],ranking: rankingArray[offset])
+                        }
+                    }else{
                         Text("あなたにおすすめの研究室は...")
                             .font(.system(size: 30, weight: .black, design: .default))
                             .offset(x:0,y:500)
-                    }else{
-                        ForEach (Array(indexList.enumerated()),id: \.offset){ offset,i in
-                            ImageView(image: imageArray[i],ranking: rankingArray[offset])
-                        }
                     }
                 
                 }else{
-                    if(!self.isCountDown){
+                    if(self.isCountDown){
+                        HStack{
+                            Spacer()
+                            Image("Image-1")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                            Image("Image")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                        }
+                        
+                        ImageView(labo:laboArray[0],ranking: rankingArray[3])
+                        
+                        HStack{
+                            Spacer()
+                            Image("IMG_8951")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                            Image("IMG_8955")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                        }
+                    }else{
                         Text("全ての質問をNoと答えたあなたは...")
                             .font(.system(size: 30, weight: .black, design: .default))
                             .offset(x:0,y:500)
-                        
-                    }else{
-                        
-                            HStack{
-                                Spacer()
-                                Image("Image-1")
-                                    .resizable(resizingMode: .stretch)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width:200)
-                                Spacer()
-                                Image("Image")
-                                    .resizable(resizingMode: .stretch)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width:200)
-                                Spacer()
-                            }
-                        ImageView(image:imageArray[0],ranking: rankingArray[3])
-                        
-                            
-                            HStack{
-                                Spacer()
-                                Image("IMG_8951")
-                                    .resizable(resizingMode: .stretch)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width:200)
-                                Spacer()
-                                Image("IMG_8955")
-                                    .resizable(resizingMode: .stretch)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width:200)
-                                Spacer()
-                            }
-                        
                     }
                 }
             }
@@ -108,8 +105,8 @@ struct ResultView: View {
     }
 }
 
-//struct ResultView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultView()
-//    }
-//}
+struct ResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultView(indexList: [2,4,5], isAnswer: true)
+    }
+}
