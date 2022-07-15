@@ -46,7 +46,7 @@ struct ResultView: View {
             if(self.isCountDown){
                 Text("👆気になる研究室の写真を押してみてね👆")
                     .font(.system(size:30))
-                    .fontWeight(.thin)
+                    .fontWeight(.bold)
                     .foregroundColor(Color.orange)
                     .padding()
                 
@@ -55,7 +55,8 @@ struct ResultView: View {
                     envData.isNavigationActive.wrappedValue=false
                 }){
                     Text("homeに戻る")
-                        .font(.subheadline)
+                        .font(.system(size:25))
+                        .fontWeight(.bold)
                         .frame(width:580,height:50,alignment: .center)
                         .foregroundColor(Color.white)
                         .padding(.bottom,10)
