@@ -25,6 +25,7 @@
 		A87703D82809374100A9118D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87703A92809374000A9118D /* Assets.xcassets */; };
 		A87703F42809401A00A9118D /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87703F32809401A00A9118D /* QuestionView.swift */; };
 		A87703F52809401A00A9118D /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87703F32809401A00A9118D /* QuestionView.swift */; };
+		A8806ACE2881398A0038D63D /* BlinkEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8806ACD2881398A0038D63D /* BlinkEffect.swift */; };
 		A886B7FC2874281A00DB682A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B7FB2874281A00DB682A /* ImageView.swift */; };
 		A886B8012874458400DB682A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886B8002874458400DB682A /* Util.swift */; };
 		A887603A287BE1CE00FE0BAA /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8876039287BE1CE00FE0BAA /* QuestionViewModel.swift */; };
@@ -68,6 +69,7 @@
 		A87703CB2809374100A9118D /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A87703CD2809374100A9118D /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		A87703F32809401A00A9118D /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		A8806ACD2881398A0038D63D /* BlinkEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkEffect.swift; sourceTree = "<group>"; };
 		A886B7FB2874281A00DB682A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		A886B8002874458400DB682A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		A8876039287BE1CE00FE0BAA /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +176,14 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		A8806ACC2881395E0038D63D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A8806ACD2881398A0038D63D /* BlinkEffect.swift */,
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
 		A88467DD281A34B200DFED35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 				A87703F32809401A00A9118D /* QuestionView.swift */,
 				A82571942865B3E8009DEB02 /* ResultView.swift */,
 				A886B7F82874279900DB682A /* Image */,
+				A8806ACC2881395E0038D63D /* Component */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -385,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8806ACE2881398A0038D63D /* BlinkEffect.swift in Sources */,
 				A886B8012874458400DB682A /* Util.swift in Sources */,
 				A8876043287C117400FE0BAA /* LaboPhotos.swift in Sources */,
 				A87703CF2809374100A9118D /* diagnose_app.xcdatamodeld in Sources */,

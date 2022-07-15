@@ -75,6 +75,7 @@ struct QuestionView: View {
                                 .foregroundColor(Color.blue)
                                 .font(.system(size:20))
                                 .padding(.bottom,15)
+                                .blinkEffect()
                         
                         ProgressView(value:Double(ViewModel.cnt), total: Double(ViewModel.total))
                                 .accentColor(Color.blue)
