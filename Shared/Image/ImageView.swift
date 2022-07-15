@@ -19,6 +19,11 @@ struct ImageView: View {
                 .frame(width: 25, height: 50)
                 .position(x: 185, y: 110)
             
+            Text(labo.iconDesc)
+                .font(.body)
+                .fontWeight(.heavy)
+                .position(x: 230, y: 60)
+            
             HStack{
                 Image(ranking.imageName)
                     .resizable()
