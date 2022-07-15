@@ -17,11 +17,11 @@ struct ImageView: View {
             Image(labo.icon)
                 .resizable()
                 .frame(width: 25, height: 50)
-                .position(x: 185, y: 140)
+                .position(x: 185, y: 135)
             
             Text(labo.iconDesc)
                 .font(.system(size: 15))
-                .position(x: 230, y: 80)
+                .position(x: 230, y: 75)
             
             HStack{
                 Image(ranking.imageName)
