@@ -15,34 +15,61 @@ struct ResultView: View {
     @EnvironmentObject var envData: EnvironmentData
     
     let indexList:[Int]
-    let allAnswerFlg:Bool
+    let isAnswer:Bool
     
     var body: some View {
         ScrollView(showsIndicators:false ){
             VStack{
-                if(allAnswerFlg==true){
-                    if(!self.isCountDown){
+                if(isAnswer==true){
+                    if(self.isCountDown){
+                        ForEach (Array(indexList.enumerated()),id: \.offset){ offset,i in
+                            ImageView(labo: laboArray[i],ranking: rankingArray[offset])
+                        }
+                    }else{
                         Text("あなたにおすすめの研究室は...")
                             .font(.system(size: 30, weight: .black, design: .default))
                             .offset(x:0,y:500)
-                    }else{
-                        ForEach (Array(indexList.enumerated()),id: \.offset){ offset,i in
-                            ImageView(image: imageArray[i],ranking: rankingArray[offset])
-                        }
                     }
                 
                 }else{
-                    if(!self.isCountDown){
+                    if(self.isCountDown){
+                        HStack{
+                            Spacer()
+                            Image("Image-1")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                            Image("Image")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                        }
+                        
+                        ImageView(labo:laboArray[0],ranking: rankingArray[3])
+                        
+                        HStack{
+                            Spacer()
+                            Image("IMG_8951")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                            Image("IMG_8955")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:200)
+                            Spacer()
+                        }
+                    }else{
                         Text("全ての質問をNoと答えたあなたは...")
                             .font(.system(size: 30, weight: .black, design: .default))
                             .offset(x:0,y:500)
-                        
-                    }else{
-                        ImageView(image:imageArray[0],ranking: rankingArray[3])
-                            .padding(.top,300)
                     }
                 }
             }
+            
             if(self.isCountDown){
                 Text("👆気になる研究室の写真を押してみてね👆")
                     .font(.system(size:30))
@@ -59,16 +86,17 @@ struct ResultView: View {
                         .fontWeight(.bold)
                         .frame(width:580,height:50,alignment: .center)
                         .foregroundColor(Color.white)
-                        .padding(.bottom,10)
+                        .padding(.vertical,10)
                         .background(.blue)
                         .border(Color.black,width:2)
                         .cornerRadius(30,antialiased: true)
                         .font(.system(size:40))
                         .navigationBarBackButtonHidden(true)
-                        .padding(.bottom,50)
+                        .padding(.vertical,50)
                 }
 
             }
+           
         }
         .onAppear(){
             //1.0sおきに実行される
@@ -84,8 +112,8 @@ struct ResultView: View {
     }
 }
 
-//struct ResultView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultView()
-//    }
-//}
+struct ResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultView(indexList: [2,4,5], isAnswer: true)
+    }
+}
