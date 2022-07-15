@@ -37,13 +37,14 @@ struct ContentView: View {
                                     .foregroundColor(Color.white)
                                     .offset(y: -300)
                             
-                                Text("〜20問でわかるおすすめの研究室〜")
-                                    .font(.system(size:40))
-                                    .font(.largeTitle)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(Color.white)
-                                    .offset(y: -300)
+
+                            Text("〜20問でわかるおすすめの研究室〜")
                                 
+                                .font(.largeTitle)
+                                .fontWeight(.medium)
+                                .foregroundColor(Color.white)
+                                .offset(y: -300)
+                                .font(.system(size:80))
                                 NavigationLink(destination:QuestionView(),isActive: $isActive){
                                         EmptyView()
                                     }
@@ -53,15 +54,32 @@ struct ContentView: View {
                                         envData.isNavigationActive=$isActive
                                     }){
                                         Text("START")
-                                            .font(.largeTitle)
-                                            .frame(width:680,height:100,alignment: .center)
-                                            .foregroundColor(Color.blue)
+                                            .font(.system(size:80))
+                                            .fontWeight(.semibold)
+                                            .frame(width:680,height:120,alignment: .center)
+                                            .foregroundColor(Color.green)
                                             .background(Color.white)
-                                            .cornerRadius(50,antialiased: true)
+                                            .cornerRadius(30,antialiased: true)
                                             .padding(.bottom,10)
                                             
                                     }
                                     .offset(y: 200)
+                                HStack{
+                                    Text("Created by ")
+                                        .font(.system(size:30))
+                                        .foregroundColor(Color.white)
+                                        
+                                    VStack{
+                                        Text ("Subaru Hoshi")
+                                            .foregroundColor(Color.white)
+                                            .font(.system(size:30))
+                                        Text("Taishin Takikawa")
+                                            .foregroundColor(Color.white)
+                                            .font(.system(size:30))
+                                }
+                                }
+                                .offset(x: 150 ,y: 250)
+                                
                             }
                         )                    
                 }
