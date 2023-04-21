@@ -20,6 +20,7 @@ struct ContentView: View {
     var body :some View{
         HStack {
             
+            //test
             NavigationView{
                 VStack{
                     Image("hacker-g2f505fda9_640")
